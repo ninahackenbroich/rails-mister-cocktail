@@ -1,8 +1,8 @@
 <h1>Add your details</h1>
 
-<%= simple_form_for[@cocktail, @dose] do |f| %>
-  <%= f.label :ingredients, "Which ingredient?" %>
-  <%= f.association :ingredients %>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.label :ingredient, "Which ingredient?" %>
+  <%= f.association :ingredient %>
   <%= f.label :description, "How much of it?" %>
   <%= f.text_field :description %>
   <br>
