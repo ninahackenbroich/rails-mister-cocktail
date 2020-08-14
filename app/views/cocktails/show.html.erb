@@ -1,15 +1,31 @@
-<h1><%= @cocktail.name %></h1>
+<div class="container" style="padding: 50px;">
+  
+  <div class="recipe">
+      <div> 
+        <% if @cocktail.photo.attached? %>
+          <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fit %>
+        <% else %>
+          <%= cl_image_tag("https://source.unsplash.com/random", width: 400, height: 300, crop: :fit, class: "card-img-top") %>
+        <% end %>
+      </div> 
+      <div>
+          <h1><%= @cocktail.name %></h1>
+          <p><strong>Description</strong></p>
+          <ul>
+            <% @cocktail.doses.each do |dose| %>
+              <li><%= dose.description %>
+              <%= dose.ingredient.name %> <%= link_to "Delete", dose_path(dose) , method: :delete %> 	
+              </li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container lower-buttons">
+    <%= link_to " ➕ Ingredient ", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
+    <br>
+    <%= link_to " ⏮ ", cocktails_path(@cocktail), class: "btn btn-primary"%>
+  </div>
+  
+</div>
 
-<p><strong>Description</strong></p>
-  <ul>
-      <% @cocktail.doses.each do |dose| %>
-        <li><%= dose.description %>
-        <%= dose.ingredient.name %> <%= link_to "Delete", dose_path(dose) , method: :delete %> 	
-        </li>
-      <% end %>
-    </p>
-    </ul>
-
-<%= link_to "+ add Ingredient ", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
-<br>
-<%= link_to "<< back >>", cocktails_path(@cocktail), class: "btn btn-primary"%>
