@@ -1,4 +1,4 @@
-<% if false %>
+
   <div class="home-banner">
     <h1>Cocktail || Party</h1>
   </div>
@@ -13,7 +13,7 @@
       <% @cocktails.each do |cocktail| %>
         <div class="col-md-4">
           <div class="card text-center">
-            <%#= cl_image_tag("sample", width: 400, height: 300, crop: :fit, class: "card-img-top") %>
+            <%= cl_image_tag("sample", width: 400, height: 300, crop: :fit, class: "card-img-top") %>
             <div class="card-body">
               <h5 class="card-title">
                 <%= cocktail.name %>
@@ -30,6 +30,3 @@
       <% end %>
     </div>
   </div>
-<% end %>
-
-<h1>COcktails</h1>
