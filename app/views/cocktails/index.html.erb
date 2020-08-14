@@ -2,11 +2,12 @@
   <h1>Cocktail || Party</h1>
 </div>
 
-<div class="container" style="padding: 50px;">
-  <h2>All our Cocktails</h2>
-  <div class="text-right">
+< class="container" style="padding: 50px;">
+  <div class="flex">
+    <h2>All our Cocktails</h2>
     <%= link_to "+ create new ", new_cocktail_path, class: "btn btn-primary"%>
   </div>
+
 
   
 
@@ -14,7 +15,7 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-md-4">
         <div class="card text-center">
-          <%= cl_image_tag("sample", width: 400, height: 300, crop: :fit, class: "card-img-top") %>
+          <%#= cl_image_tag("sample", width: 400, height: 300, crop: :fit, class: "card-img-top") %>
           <div class="card-body">
             <h5 class="card-title">
               <%= cocktail.name %>

@@ -5,7 +5,7 @@
         <% if @cocktail.photo.attached? %>
           <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fit %>
         <% else %>
-          <%= cl_image_tag("https://source.unsplash.com/random", width: 400, height: 300, crop: :fit, class: "card-img-top") %>
+          <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 400, height: 300, crop: :fit, class: "card-img-top") %>
         <% end %>
       </div> 
       <div>
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="container lower-buttons">
-    <%= link_to " ➕ Ingredient ", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
+    <%= link_to " ➕Ingredient ", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
     <br>
     <%= link_to " ⏮ ", cocktails_path(@cocktail), class: "btn btn-primary"%>
   </div>
