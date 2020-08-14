@@ -1,6 +1,5 @@
 class DosesController < ApplicationController
   before_action :set_cocktail, only:[:new, :create]
-  # before_action :set_ingredient, only:[:destroy]
 
   def new
     @dose = Dose.new

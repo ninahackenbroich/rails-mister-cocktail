@@ -12,7 +12,7 @@ puts "Cleaning database..."
 Cocktail.destroy_all
 
 puts "Creating some cocktails..."
-10.times do
+25.times do
   cocktail = Cocktail.create(
     name: Faker::FunnyName.two_word_name
     )
