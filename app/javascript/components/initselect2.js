@@ -1,10 +1,10 @@
-// import $ from "jquery";
-// import select2 from "select2";
+import $ from "jquery";
+import select2 from "select2";
 
-// const initSelect2 = () => {
-//   $(document).ready(function () {
-//     $(".beautiful-dropdown").select2();
-//   });
-// };
+const initSelect2 = () => {
+  $(document).ready(function () {
+    $(".beautiful-dropdown").select2();
+  });
+};
 
-// export { initSelect2 };
+export { initSelect2 };
