@@ -1,9 +1,11 @@
 <div>
-      <p><strong>Add the ingredients</strong></p>
+      <p><strong>Add more ingredients</strong></p>
       <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.label :ingredient, "Which ingredient?" %>
-        <%= f.association :ingredient, label: false %>
+        <br>
+        <%= f.association :ingredient, label: false, input_html: { class: 'select2' } %>
         <%= f.label :description, "How much of it?" %>
+        <br>
         <%= f.text_field :description, label: false %>
         <br>
         <br>

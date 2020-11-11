@@ -21,7 +21,10 @@ h1 {
   margin-left: 5px;
 }
 
-.big-transparant-button:hover {
+.big-transparant-button:hover,
+.big-transparant-button:active,
+.big-transparant-button:link,
+.big-transparant-button:visited {
   opacity: 1;
   transition: 0.5s;
   color: white;
@@ -32,23 +35,15 @@ h1 {
   background-color: $orange;
 }
 
-.background-orange:hover {
-  background-color: $orange;
-}
-
+.background-orange:hover,
+.background-orange:active,
+.background-orange:link,
 .background-orange:visited {
   background-color: $orange;
+  border: $orange;
 }
 
 .border-orange {
-  border: $orange;
-}
-
-.border-orange:hover {
-  border: $orange;
-}
-
-.border-orange:visited {
   border: $orange;
 }
 
@@ -59,4 +54,11 @@ h1 {
 .text-orange:hover {
   color: $orange;
   text-decoration: none;
+}
+
+.banner-text {
+  color: $orange;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px grey;
 }

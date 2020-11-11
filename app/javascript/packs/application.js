@@ -19,9 +19,13 @@ import "bootstrap";
 
 import { initUpdateNavbarOnScroll } from "../components/navbar";
 import { initAnchorToHIW } from "../components/anchor";
+import { loadDynamicBannerText } from "../components/banner";
+import { initSelect2 } from "../components/init_select2";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
   initAnchorToHIW();
+  loadDynamicBannerText();
+  initSelect2();
 });
