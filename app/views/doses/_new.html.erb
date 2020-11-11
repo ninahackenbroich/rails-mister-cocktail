@@ -3,7 +3,7 @@
       <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.label :ingredient, "Which ingredient?" %>
         <br>
-        <%= f.association :ingredient, label: false, input_html: { class: 'select2' } %>
+        <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" } %>
         <%= f.label :description, "How much of it?" %>
         <br>
         <%= f.text_field :description, label: false %>
