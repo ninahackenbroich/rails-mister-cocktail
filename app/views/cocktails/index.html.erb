@@ -1,28 +1,34 @@
 
   <div class="home-banner">
-    <h1>Cocktail || Party</h1>
+    <h1>Quarantini</h1>
+    <button id="hiw-button" class="btn big-transparant-button display-mobile shadow mt-3" >START DRINKING</button>
   </div>
 
   <div class="container" style="padding: 50px;">
-    <div class="flex">
+    <p id="hiw">.</p>
+    <div class="d-flex justify-content-between align-items-center">
       <h2>All our Cocktails</h2>
-      <%= link_to "+ create new ", new_cocktail_path, class: "btn btn-primary"%>
+      <%= link_to "+ create new ", new_cocktail_path, class: "btn btn-primary background-orange border-orange"%>
     </div>
 
     <div class="d-flex flex-row justify-content-around row row-cols-1 row-cols-md-3">
       <% @cocktails.each do |cocktail| %>
         <div class="col-md-4">
           <div class="card text-center">
-            <%= cl_image_tag("sample", width: 400, height: 300, crop: :fit, class: "card-img-top") %>
+              <% if cocktail.photo.attached? %>
+                <%= cl_image_tag cocktail.photo.key, class: "card-img-top" %>
+              <% else %>
+                <%= cl_image_tag("https://res.cloudinary.com/dwmwaf1jp/image/upload/v1605097953/samples/cocktail.jpg", class: "card-img-top") %>
+              <% end %>
             <div class="card-body">
-              <h5 class="card-title">
+              <h5 class="card-title text-orange">
                 <%= cocktail.name %>
               </h5>
               <div class="btn">
-                <%= link_to "Details", cocktail_path(cocktail)%>
+                <%= link_to "Details", cocktail_path(cocktail), class: " text-orange"%>
               </div>
               <div class="btn">
-                <%= link_to "🗑", cocktail_path(cocktail), method: :delete %> 
+                <%= link_to "🗑", cocktail_path(cocktail), method: :delete, class: " text-orange" %> 
               </div>
             </div>
           </div>

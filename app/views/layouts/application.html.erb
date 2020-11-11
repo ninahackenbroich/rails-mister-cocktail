@@ -13,6 +13,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="container">
+      <%= render "shared/navbar", background: params[:action] == "index" %>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

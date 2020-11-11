@@ -1,1 +1,62 @@
 // Specific CSS for your home-page
+h1 {
+  color: #b3634f;
+  font-size: 120px;
+  text-shadow: 1px 1px grey;
+}
+
+// **************** BIG TRANSPARENT BUTTON ****************
+
+.big-transparant-button {
+  color: white;
+  opacity: 0.8;
+  background-color: #b3634f;
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 23px;
+  border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px 30px;
+  letter-spacing: 1px;
+  margin-left: 5px;
+}
+
+.big-transparant-button:hover {
+  opacity: 1;
+  transition: 0.5s;
+  color: white;
+  background-color: #b3634f;
+}
+
+.background-orange {
+  background-color: $orange;
+}
+
+.background-orange:hover {
+  background-color: $orange;
+}
+
+.background-orange:visited {
+  background-color: $orange;
+}
+
+.border-orange {
+  border: $orange;
+}
+
+.border-orange:hover {
+  border: $orange;
+}
+
+.border-orange:visited {
+  border: $orange;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-orange:hover {
+  color: $orange;
+  text-decoration: none;
+}

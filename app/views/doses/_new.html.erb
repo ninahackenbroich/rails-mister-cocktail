@@ -1,0 +1,13 @@
+<div>
+      <p><strong>Add the ingredients</strong></p>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.label :ingredient, "Which ingredient?" %>
+        <%= f.association :ingredient, label: false %>
+        <%= f.label :description, "How much of it?" %>
+        <%= f.text_field :description, label: false %>
+        <br>
+        <br>
+        <%= f.submit "Add ingredient", class: "btn btn-primary background-orange border-orange", disable_with: 'Adding...' %>
+        <% end %>
+        <br>
+</div>

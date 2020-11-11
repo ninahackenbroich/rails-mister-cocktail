@@ -1,12 +1,22 @@
-<h1>Add your favourite cocktail</h1>
+<div class="container p-5 m-5">
+  <div class="row">
+    <div class="col">
+      <%= cl_image_tag("https://res.cloudinary.com/dwmwaf1jp/image/upload/v1605097953/samples/cocktail.jpg", :width=>500, :crop=>"scale" )%>
+    </div>
+    <div class="col">
+      <h2>Add your favourite cocktail</h2>
+      <%= simple_form_for(@cocktail) do |f| %>
+        <br>
+        <%= f.label :name, "Name" %>
+        <br>
+        <%= f.input :name, label: false %>
+        <br>
+        <br>
+        <%= f.input :photo, as: :file, label: false %>
+        <br>
+        <%= f.submit "Submit", class: "btn btn-primary background-orange border-orange", disable_with: 'Submiting...' %>
+        <br>
+      <% end %>
+  </div>
 
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.label :name, "Name of your cocktail" %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :photo, "Upload a picture" %>
-  <%= f.input :photo, as: :file %>
-  <br>
-  <%= f.submit "Submit", class: "btn btn-primary", disable_with: 'Submiting...' %>
-  <br>
-<% end %>
+</div>

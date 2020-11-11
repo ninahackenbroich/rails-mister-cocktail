@@ -1,31 +1,30 @@
-<div class="container" style="padding: 50px;">
-  
-  <div class="container">
-      <div> 
-        <% if @cocktail.photo.attached? %>
-          <%= cl_image_tag @cocktail.photo.key, height: 300, width: 200, crop: :fit %>
+<div class="container p-5 m-5">
+  <div class="row">
+    <div class="col">
+      <% if @cocktail.photo.attached? %>
+          <%= cl_image_tag @cocktail.photo.key, width: 500, :crop=>"scale" %>
         <% else %>
-          <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 20, height: 300, crop: :fit, class: "card-img-top") %>
+          <%=  cl_image_tag("https://res.cloudinary.com/dwmwaf1jp/image/upload/v1605097953/samples/cocktail.jpg", :width=>500, :crop=>"scale") %>
         <% end %>
-      </div> 
-      <div>
-          <h1><%= @cocktail.name %></h1>
-          <p><strong>Description</strong></p>
-          <ul>
-            <% @cocktail.doses.each do |dose| %>
-              <li><%= dose.description %>
-              <%= dose.ingredient.name %> <%= link_to "Delete", dose_path(dose) , method: :delete %> 	
-              </li>
-            <% end %>
-          </ul>
-      </div>
+    </div>
+    <div class="col">
+      <h2 class="text-orange"><%= @cocktail.name %></h2>
+      <p><strong>Description</strong></p>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.description %>
+          <%= dose.ingredient.name %> <%= link_to "Delete", dose_path(dose) , method: :delete %> 	
+          </li>
+        <% end %>
+      </ul> 
+      <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+
+
     </div>
   </div>
-  <div class="container lower-buttons">
-    <%= link_to " ➕Ingredient ", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
-    <br>
-    <%= link_to " ⏮ ", cocktails_path(@cocktail), class: "btn btn-primary"%>
-  </div>
-  
+      <div class="lower-buttons">
+        <br>
+        <%= link_to "Go back", root_path, class: "btn btn-primary background-orange border-orange"%>
+      </div>
 </div>
 

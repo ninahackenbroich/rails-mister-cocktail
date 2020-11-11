@@ -1,12 +1,31 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  // [...]
+  background-color: transparent;
+  transition: 0.3s background-color ease;
+}
+.navbar-lewagon-white {
+  background-color: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar {
+  li {
+    margin-left: 30px;
+    font-weight: 600;
+  }
+  a:link,
+  a:visited {
+    color: #b3634f;
+    text-decoration: none;
+    transition: border-bottom 0.2s, color 0.2s;
+  }
+  a:hover,
+  a:active {
+    color: #b3634f;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo {
+  img {
+    height: 50px;
+  }
 }
