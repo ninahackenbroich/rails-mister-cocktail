@@ -9,6 +9,7 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+  
 ​
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
@@ -24,7 +25,8 @@ Rails.application.configure do
 ​
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
-​
+​  
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 ​
@@ -63,6 +65,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "rails_mister_cocktail_two_production"
 ​
   config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'https://git.heroku.com/misses-quarantini.git' }
 ​
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
